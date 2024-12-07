@@ -6,6 +6,7 @@ const app = express();
 const persons = require("./data/persons");
 const homepage = require("./data/homepage");
 const generateId = require("./helpers/generateId");
+const getInfo = require("./helpers/getInfo");
 const PORT = 3001;
 
 // Middleware for parsing JSON
@@ -22,6 +23,12 @@ app.get("/", (req, res) => {
 // GET /api/persons
 app.get("/api/persons", (req, res) => {
   res.json(persons);
+});
+
+// Endpoint for getting information about the Phonebook
+// GET /info
+app.get("/info", (req, res) => {
+  res.send(getInfo(persons.length, new Date()));
 });
 
 // Asign the port number

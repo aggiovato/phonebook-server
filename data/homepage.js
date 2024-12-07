@@ -13,7 +13,8 @@ const homepage = `
 
   <h2>Endpoints</h2>
   <ul>
-    <li><a href="/api/persons">/api/persons</a> - Get all persons</li>
+    <li><a href="/api/persons">/api/persons</a> - Get all people</li>
+    <li><a href="/info">/info</a> - Get information about the Phonebook</li>
   </ul>
 </body>
 </html>
