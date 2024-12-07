@@ -1,2 +1,13 @@
 ###
 GET http://localhost:3001/info
+// HTTP/1.1 200 OK
+// X-Powered-By: Express
+// Content-Type: text/html; charset=utf-8
+// Content-Length: 145
+// ETag: W/"91-Sm5Jw0bgrcX7czo384eFQmsZU0I"
+// Date: Sat, 07 Dec 2024 23:22:33 GMT
+// Connection: close
+
+
+//    <p>Phonebook has info for 3 people</p>
+//    <p>Last request: Sun Dec 08 2024 00:22:33 GMT+0100 (Ora standard dell’Europa centrale)</p>

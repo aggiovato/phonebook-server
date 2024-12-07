@@ -3,7 +3,7 @@
 const express = require("express");
 const app = express();
 
-const persons = require("./data/persons");
+let persons = require("./data/persons");
 const renderHomepage = require("./helpers/renderHomepage");
 const renderInfo = require("./helpers/renderInfo");
 const generateId = require("./helpers/generateId");
@@ -40,7 +40,26 @@ app.get("/api/persons/:id", (req, res) => {
   if (person) {
     res.json(person);
   } else {
-    res.status(404).json({ error: "Person not found" });
+    res.status(404).json({ error: "Person not found" }); // not found
+  }
+});
+
+// Endpoint for deleting a person by ID
+// DELETE /api/persons/:id
+app.delete("/api/persons/:id", (req, res) => {
+  const id = parseInt(req.params.id);
+  if (isNaN(id)) {
+    res.status(400).json({ error: "Invalid ID" }); // bad request
+    return;
+  }
+
+  const person = persons.find((p) => p.id === id);
+
+  if (person) {
+    persons = persons.filter((p) => p.id !== id);
+    res.status(200).json({ message: "Person deleted" }); // ok
+  } else {
+    res.status(404).json({ error: "Person not found" }); // not found
   }
 });
 

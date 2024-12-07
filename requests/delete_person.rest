@@ -1,0 +1,41 @@
+###
+DELETE http://localhost:3001/api/persons/3
+// HTTP/1.1 200 OK
+// X-Powered-By: Express
+// Content-Type: application/json; charset=utf-8
+// Content-Length: 28
+// ETag: W/"1c-W+uIYkJfVXPd7DrAF+FHPTVohCg"
+// Date: Sat, 07 Dec 2024 23:16:46 GMT
+// Connection: close
+
+// {
+//   "message": "Person deleted"
+// }
+
+###
+DELETE http://localhost:3001/api/persons/hello
+// HTTP/1.1 400 Bad Request
+// X-Powered-By: Express
+// Content-Type: application/json; charset=utf-8
+// Content-Length: 22
+// ETag: W/"16-n3Xa9o2UYcMPQVvhmuzHPYV5wr0"
+// Date: Sat, 07 Dec 2024 23:19:47 GMT
+// Connection: close
+
+// {
+//   "error": "Invalid ID"
+// }
+
+###
+DELETE http://localhost:3001/api/persons/6
+// HTTP/1.1 404 Not Found
+// X-Powered-By: Express
+// Content-Type: application/json; charset=utf-8
+// Content-Length: 28
+// ETag: W/"1c-0c7qhzTjItgpyzxRwOUWyEyVQ+I"
+// Date: Sat, 07 Dec 2024 23:20:46 GMT
+// Connection: close
+
+// {
+//   "error": "Person not found"
+// }

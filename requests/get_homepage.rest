@@ -1,0 +1,36 @@
+###
+GET http://localhost:3001/
+// HTTP/1.1 200 OK
+// X-Powered-By: Express
+// Content-Type: text/html; charset=utf-8
+// Content-Length: 932
+// ETag: W/"3a4-YTjo+9oDKrvMwIANce2l9xPY0AU"
+// Date: Sat, 07 Dec 2024 23:24:10 GMT
+// Connection: close
+
+
+// <!DOCTYPE html>
+// <html lang="en">
+// <head>
+//   <meta charset="UTF-8">
+//   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+//   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+//   <title>Phonebook API</title>
+// </head>
+// <body>
+//   <h1>Welcome to the Phonebook API</h1>
+//   <p>This is the home page for the Phonebook API service.</p>
+// 
+//   <h2>Endpoints</h2>
+//   <ul>
+//     <li><h4><a href="/api/persons">/api/persons</a> - Get all people</h4></li>
+//     <li><h4><a href="/info">/info</a> - Get information about the Phonebook</h4></li>
+//     <li><h4><a href="/api/persons/1">/api/persons/:id</a> - Get a person by ID (person with id=1 in this case)</h4></li>
+//     <div>
+//       <h4>Try it out</h4>
+//       <p>Click on the links below to get information about a person:</p>
+//       <a href="/api/persons/1">person 1</a><br /><a href="/api/persons/2">person 2</a><br /><a href="/api/persons/4">person 4</a>
+//     </div>
+//   </ul>
+// </body>
+// </html>
