@@ -1,0 +1,45 @@
+###
+POST http://localhost:3001/api/persons
+Content-Type: application/json
+
+{
+  "name": "John Doe",
+  "number": "123-456-7890"
+}
+
+// HTTP/1.1 201 Created
+// X-Powered-By: Express
+// Content-Type: application/json; charset=utf-8
+// Content-Length: 52
+// ETag: W/"34-khDOkmGMDLRFNT1/kaL3lJIaHEQ"
+// Date: Sat, 07 Dec 2024 23:56:34 GMT
+// Connection: close
+
+// {
+//   "id": 552,
+//   "name": "John Doe",
+//   "number": "123-456-7890"
+// }
+
+###
+POST http://localhost:3001/api/persons
+Content-Type: application/json
+
+{
+  "name": "Jenny Doe",
+  "number": "987-654-3210"
+}
+
+// const id = generateId(persons, 10);
+
+// HTTP/1.1 500 Internal Server Error
+// X-Powered-By: Express
+// Content-Type: application/json; charset=utf-8
+// Content-Length: 42
+// ETag: W/"2a-NlcdQRS6xEFtHr3eCIqd2gnOCmA"
+// Date: Sun, 08 Dec 2024 00:02:25 GMT
+// Connection: close
+
+// {
+//   "error": "Could not generate a unique ID"
+// }

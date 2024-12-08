@@ -63,6 +63,20 @@ app.delete("/api/persons/:id", (req, res) => {
   }
 });
 
+// Endpoint for creating a new person
+// POST /api/persons
+app.post("/api/persons", (req, res) => {
+  try {
+    const id = generateId(persons);
+    const body = req.body;
+    const person = { id, name: body.name, number: body.number };
+    persons = persons.concat(person);
+    res.status(201).json(person); // created
+  } catch (error) {
+    res.status(500).json({ error: error.message }); // internal server error
+  }
+});
+
 // Asign the port number
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);

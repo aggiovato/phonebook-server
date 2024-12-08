@@ -13,3 +13,17 @@ GET http://localhost:3001/api/persons/1
 //   "name": "Arto Hellas",
 //   "number": "040-123456"
 // }
+
+###
+GET http://localhost:3001/api/persons/7
+// HTTP/1.1 404 Not Found
+// X-Powered-By: Express
+// Content-Type: application/json; charset=utf-8
+// Content-Length: 28
+// ETag: W/"1c-0c7qhzTjItgpyzxRwOUWyEyVQ+I"
+// Date: Sat, 07 Dec 2024 23:36:14 GMT
+// Connection: close
+
+// {
+//   "error": "Person not found"
+// }
