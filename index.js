@@ -3,6 +3,10 @@
 const express = require("express");
 const app = express();
 
+const morgan = require("morgan");
+// const reqLogger = require("./middlewares/reqLogger");
+// const unknownEndpoint = require("./middlewares/unknownEndpoint");
+
 let persons = require("./data/persons");
 const renderHomepage = require("./helpers/renderHomepage");
 const renderInfo = require("./helpers/renderInfo");
@@ -17,6 +21,7 @@ const PORT = 3001;
 
 // Middleware for parsing JSON
 app.use(express.json());
+app.use(morgan("tiny"));
 
 /******************************************************** */
 // Endpoint for home page
@@ -89,6 +94,9 @@ app.post("/api/persons", (req, res) => {
     }
   }
 });
+
+// Unknown endpoint
+// app.use(unknownEndpoint);
 
 // Asign the port number
 app.listen(PORT, () => {
