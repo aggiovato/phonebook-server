@@ -43,3 +43,64 @@ Content-Type: application/json
 // {
 //   "error": "Could not generate a unique ID"
 // }
+
+###
+POST http://localhost:3001/api/persons
+Content-Type: application/json
+
+{
+  "number": "123-456-7890"
+}
+
+// HTTP/1.1 400 Bad Request
+// X-Powered-By: Express
+// Content-Type: application/json; charset=utf-8
+// Content-Length: 28
+// ETag: W/"1c-0/IEupHJ1P5PjupLTJPNs0Hf4Zc"
+// Date: Sun, 08 Dec 2024 00:48:58 GMT
+// Connection: close
+
+// {
+//   "error": "Name is required"
+// }
+
+###
+POST http://localhost:3001/api/persons
+Content-Type: application/json
+
+{
+  "name": "John Doe"
+}
+
+// HTTP/1.1 400 Bad Request
+// X-Powered-By: Express
+// Content-Type: application/json; charset=utf-8
+// Content-Length: 30
+// ETag: W/"1e-FLF0hPReX2wGoNapzKqkbefMQpc"
+// Date: Sun, 08 Dec 2024 00:50:16 GMT
+// Connection: close
+
+// {
+//   "error": "Number is required"
+// }
+
+###
+POST http://localhost:3001/api/persons
+Content-Type: application/json
+
+{
+  "name": "John Doe",
+  "number": "123-456-7890"
+}
+
+// HTTP/1.1 409 Conflict
+// X-Powered-By: Express
+// Content-Type: application/json; charset=utf-8
+// Content-Length: 31
+// ETag: W/"1f-RfeSdLJPpKZAVfvRdMGEh4rph9E"
+// Date: Sun, 08 Dec 2024 01:10:24 GMT
+// Connection: close
+
+// {
+//   "error": "Name must be unique"
+// }

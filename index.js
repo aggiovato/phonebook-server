@@ -6,7 +6,12 @@ const app = express();
 let persons = require("./data/persons");
 const renderHomepage = require("./helpers/renderHomepage");
 const renderInfo = require("./helpers/renderInfo");
-const generateId = require("./helpers/generateId");
+const {
+  ValidationError,
+  generateId,
+  validateName,
+  validateNumber,
+} = require("./helpers/generals");
 
 const PORT = 3001;
 
@@ -68,12 +73,20 @@ app.delete("/api/persons/:id", (req, res) => {
 app.post("/api/persons", (req, res) => {
   try {
     const id = generateId(persons);
-    const body = req.body;
-    const person = { id, name: body.name, number: body.number };
+    const { name, number } = req.body;
+
+    validateName(name, persons);
+    validateNumber(number);
+
+    const person = { id, name, number };
     persons = persons.concat(person);
     res.status(201).json(person); // created
   } catch (error) {
-    res.status(500).json({ error: error.message }); // internal server error
+    if (error instanceof ValidationError) {
+      res.status(error.code).json({ error: error.message }); // bad request
+    } else {
+      res.status(500).json({ error: "Internal server error" }); // Something went wrong!
+    }
   }
 });
 
