@@ -21,7 +21,25 @@ const PORT = 3001;
 
 // Middleware for parsing JSON
 app.use(express.json());
-app.use(morgan("tiny"));
+
+morgan.token("body", (req, res) => {
+  return req.method === "POST" ? `> ${JSON.stringify(req.body)}` : "";
+});
+app.use(
+  morgan((tokens, req, res) => {
+    const log = [
+      tokens.method(req, res),
+      tokens.url(req, res),
+      tokens.status(req, res),
+      `- ${tokens["response-time"](req, res)} ms`,
+    ];
+
+    const body = tokens.body(req, res);
+    if (body) log.push(body);
+
+    return log.join(" ");
+  })
+);
 
 /******************************************************** */
 // Endpoint for home page

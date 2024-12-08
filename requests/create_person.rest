@@ -69,7 +69,7 @@ POST http://localhost:3001/api/persons
 Content-Type: application/json
 
 {
-  "name": "John Doe"
+  "name": "Noah Doe"
 }
 
 // HTTP/1.1 400 Bad Request
