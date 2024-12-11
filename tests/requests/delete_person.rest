@@ -1,5 +1,5 @@
 ###
-DELETE http://localhost:3001/api/persons/552
+DELETE http://localhost:3000/api/persons/341
 // HTTP/1.1 200 OK
 // X-Powered-By: Express
 // Content-Type: application/json; charset=utf-8
@@ -13,7 +13,7 @@ DELETE http://localhost:3001/api/persons/552
 // }
 
 ###
-DELETE http://localhost:3001/api/persons/hello
+DELETE http://localhost:3000/api/persons/hello
 // HTTP/1.1 400 Bad Request
 // X-Powered-By: Express
 // Content-Type: application/json; charset=utf-8

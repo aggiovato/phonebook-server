@@ -1,6 +1,8 @@
 # Phonebook API
 
-This is the backend server for the Phonebook app. It runs on port 3001, by using Express.js.
+This is the backend server for the Phonebook app. It runs on port 3000, by using Express.js and some other technologies.
+
+You can find the deployed version of the app at [https://phonebook-server-aggiovato.fly.dev/](https://phonebook-server-aggiovato.fly.dev/)
 
 ## Endpoints
 
