@@ -3,6 +3,7 @@
 // EXTERNAL MODULES
 const express = require("express");
 const cors = require("cors");
+const expressLayouts = require("express-ejs-layouts");
 
 // IMPORT MIDDLEWARES
 const morganLogger = require("./middlewares/morganLogger");
@@ -25,6 +26,7 @@ app.use(express.static("dist")); // serve static FRONTEND files
 app.use("/", express.static("public"));
 app.use(morganLogger); // log requests
 app.use(cors()); // enable CORS (JIC)
+app.use(expressLayouts); // enable layouts
 
 app.use("/", homeRouter); // mount the home router
 app.use("/api", apiRouter); // mount the API router

@@ -1,85 +1,55 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/styles.css" />
-    <title>API Homepage</title>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap"
-      rel="stylesheet"
-    />
-  </head>
-  <body>
-    <div class="container">
-      <div class="title no-select">
-        <h1>Phonebook <span>API</span> Homepage</h1>
-        <h3>Welcome to the API RESTful service for the Phonebook</h3>
-      </div>
+<div class="container">
+  <div class="title no-select">
+    <h1>Phonebook <span>API</span> Homepage</h1>
+    <h3>Welcome to the API RESTful service for the Phonebook</h3>
+  </div>
 
-      <div>
-        Here you can find the endpoints for the Phonebook API service. Feel free
-        to use them!
-      </div>
+  <div>
+    Here you can find the endpoints for the Phonebook API service. Feel free to
+    use them!
+  </div>
 
-      <div class="button-grid no-select">
-        <div class="button-group">
-          <div>About Phonebook</div>
-          <button class="info" onclick="window.location.href = '/info'">
-            GET <span id="endpoint">/info</span>
-          </button>
-        </div>
-
-        <div class="button-group">
-          <div>Get all persons</div>
-          <button onclick="window.location.href = '/api/persons'">
-            GET <span id="endpoint">/api/persons</span>
-          </button>
-        </div>
-
-        <div class="button-group">
-          <div>Get a person by ID</div>
-          <button onclick="window.location.href = '/api/persons/1'">
-            GET <span id="endpoint">/api/persons/:id</span>
-          </button>
-        </div>
-
-        <div class="button-group">
-          <div>Create a new person</div>
-          <button onclick="window.location.href = '/api/persons'">
-            POST <span id="endpoint">/api/persons</span>
-          </button>
-        </div>
-
-        <div class="button-group">
-          <div>Delete a person by ID</div>
-          <button onclick="window.location.href = '/api/persons/1'">
-            DELETE <span id="endpoint">/api/persons/:id</span>
-          </button>
-        </div>
-
-        <div class="button-group">
-          <div>Update a person by ID</div>
-          <button onclick="window.location.href = '/api/persons/1'">
-            PUT <span id="endpoint">/api/persons/:id</span>
-          </button>
-        </div>
-      </div>
+  <div class="button-grid no-select">
+    <div class="button-group">
+      <div>About Phonebook</div>
+      <button class="info" onclick="window.location.href = '/info'">
+        GET <span id="endpoint">/info</span>
+      </button>
     </div>
 
-    <footer class="footer">
-      <div>
-        If you wanto to visit our main page, just click down below
-        <div class="click">
-          <a href="/">Phonebook </a>
-          <svg width="30" height="30" viewBox="0 0 24 24">
-            <path
-              fill="currentColor"
-              d="M11.589 3a.75.75 0 0 0-1.5 0v1.978a.75.75 0 0 0 1.5 0zM5.983 4.945A.75.75 0 0 0 4.917 6l1.47 1.483A.75.75 0 1 0 7.452 6.43zM16.761 6a.75.75 0 0 0-1.065-1.055l-1.47 1.484a.75.75 0 1 0 1.065 1.055zM11.8 10.096c-1.025-.404-1.994.617-1.61 1.61l3.581 9.25c.41 1.058 1.901 1.059 2.311 0l1.374-3.543l3.508-1.385c1.048-.414 1.048-1.903 0-2.317zm-6.84.067H3a.75.75 0 0 0 0 1.5h1.96a.75.75 0 0 0 0-1.5m2.492 5.234a.75.75 0 0 0-1.065-1.056l-1.47 1.484a.75.75 0 1 0 1.066 1.056z"
-            />
-          </svg>
-        </div>
-      </div>
-    </footer>
-  </body>
-</html>
+    <div class="button-group">
+      <div>Get all persons</div>
+      <button onclick="window.location.href = '/api/persons'">
+        GET <span id="endpoint">/api/persons</span>
+      </button>
+    </div>
+
+    <div class="button-group">
+      <div>Get a person by ID</div>
+      <button onclick="window.location.href = '/api/persons/1'">
+        GET <span id="endpoint">/api/persons/:id</span>
+      </button>
+    </div>
+
+    <div class="button-group">
+      <div>Create a new person</div>
+      <button onclick="window.location.href = '/api/persons'">
+        POST <span id="endpoint">/api/persons</span>
+      </button>
+    </div>
+
+    <div class="button-group">
+      <div>Delete a person by ID</div>
+      <button onclick="window.location.href = '/api/persons/1'">
+        DELETE <span id="endpoint">/api/persons/:id</span>
+      </button>
+    </div>
+
+    <div class="button-group">
+      <div>Update a person by ID</div>
+      <button onclick="window.location.href = '/api/persons/1'">
+        PUT <span id="endpoint">/api/persons/:id</span>
+      </button>
+    </div>
+  </div>
+</div>
