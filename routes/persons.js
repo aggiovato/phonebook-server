@@ -1,36 +1,43 @@
-// Routes for persons endpoints
-
+// EXTERNAL MODULES
 const express = require("express");
-const router = express.Router();
 
-const { validatePOST } = require("../middlewares/validators");
-const { addPerson, deletePerson } = require("../data/personsStore");
-
+// MODELS
 const Person = require("../models/person");
 
-// MIDDLEWARES
-// router.param("id", validateGET);
+// STORES
+const { setTotal, addOneTotal, deleteOneTotal } = require("../data/totalStore");
 
+/******************************************************** */
+
+// CREATE THE ROUTER
+const router = express.Router();
+
+/******************************************************** */
+
+// ROUTES CONTROLLERS
 // GET /persons
 router.get("/", (req, res) => {
   Person.find({}).then((persons) => {
     res.json(persons);
-    // console.log(persons);
+    setTotal(persons.length);
   });
-});
-
-// POST /api/persons
-router.post("/", validatePOST, (req, res) => {
-  const { person } = req;
-  addPerson(person);
-  res.status(201).json(person); // created
 });
 
 // GET /api/persons/:id
 router.route("/:id").get((req, res) => {
   Person.findById(req.params.id).then((person) => {
     res.json(person);
-    // console.log(person);
+  });
+});
+
+// POST /api/persons
+router.post("/", (req, res) => {
+  const { name, number } = req.body;
+  const person = new Person({ name, number });
+
+  person.save().then((person) => {
+    res.status(201).json(person); // created
+    addOneTotal();
   });
 });
 
@@ -41,4 +48,7 @@ router.route("/:id").delete((req, res) => {
   res.status(200).json({ message: "Person deleted" }); // ok
 });
 
+/******************************************************** */
+
+// EXPORT THE ROUTER
 module.exports = router;
