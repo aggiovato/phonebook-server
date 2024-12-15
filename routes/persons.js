@@ -43,9 +43,9 @@ router.post("/", (req, res) => {
 
 // DELETE /api/persons/:id
 router.route("/:id").delete((req, res) => {
-  const { person } = req;
-  deletePerson(person.id);
-  res.status(200).json({ message: "Person deleted" }); // ok
+  Person.findByIdAndDelete(req.params.id).then((person) => {
+    res.status(204).json({ message: "Person deleted" }); // no content
+  });
 });
 
 /******************************************************** */

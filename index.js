@@ -21,20 +21,19 @@ const PORT = process.env.PORT;
 /******************************************************** */
 
 // MIDDLEWARES
-app.use(express.json()); // parse JSON
-app.use(express.urlencoded({ extended: true })); // parse URL-encoded bodies (JIC)
 app.use(express.static("dist")); // serve static FRONTEND files
 app.use("/", express.static("public"));
+
+app.use(express.json()); // parse JSON
 app.use(morganLogger); // log requests
-app.use(cors()); // enable CORS (JIC)
 app.use(expressLayouts); // enable layouts
+
+app.set("view engine", "ejs"); // set the view engine
+app.set("json spaces", 2); // set JSON spaces
 
 app.use("/", homeRouter); // mount the home router
 app.use("/api", apiRouter); // mount the API router
 app.use("/api/persons", personsRouter); // mount the persons router
-
-app.set("view engine", "ejs"); // set the view engine
-app.set("json spaces", 2); // set JSON spaces
 
 /******************************************************** */
 
