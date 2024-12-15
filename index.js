@@ -3,7 +3,6 @@
 // EXTERNAL MODULES
 require("dotenv").config();
 const express = require("express");
-const cors = require("cors");
 const expressLayouts = require("express-ejs-layouts");
 
 // IMPORT MIDDLEWARES

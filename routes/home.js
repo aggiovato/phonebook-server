@@ -1,8 +1,8 @@
 // EXTERNAL MODULES
 const express = require("express");
 
-// STORES
-const { getTotal } = require("../data/totalStore");
+// MODELS
+const Person = require("../models/person");
 
 /******************************************************** */
 
@@ -18,10 +18,12 @@ router.use("/info/static", express.static("public"));
 
 // ROUTES CONTROLLERS
 // GET /
-router.get("/info", (req, res) => {
-  res.render("info", {
-    numPeople: getTotal(),
-  });
+router.get("/info", (req, res, next) => {
+  Person.countDocuments({})
+    .then((numPeople) => {
+      res.render("info", { numPeople });
+    })
+    .catch((err) => next(err));
 });
 
 /******************************************************** */
