@@ -51,6 +51,21 @@ router.post("/", (req, res, next) => {
     .catch((err) => next(err));
 });
 
+// PUT /api/persons/:id
+router.route("/:id").put((req, res, next) => {
+  const { name, number } = req.body;
+  const person = {
+    name,
+    number,
+  };
+
+  Person.findByIdAndUpdate(req.params.id, person, { new: true })
+    .then((updatedPerson) => {
+      res.status(202).json(updatedPerson); // accepted
+    })
+    .catch((err) => next(err));
+});
+
 // DELETE /api/persons/:id
 router.route("/:id").delete((req, res, next) => {
   Person.findByIdAndDelete(req.params.id)
