@@ -4,9 +4,6 @@ const express = require("express");
 // MODELS
 const Person = require("../models/person");
 
-// STORES
-const { setTotal, addOneTotal, deleteOneTotal } = require("../data/totalStore");
-
 /******************************************************** */
 
 // CREATE THE ROUTER
@@ -16,36 +13,51 @@ const router = express.Router();
 
 // ROUTES CONTROLLERS
 // GET /persons
-router.get("/", (req, res) => {
-  Person.find({}).then((persons) => {
-    res.json(persons);
-    setTotal(persons.length);
-  });
+router.get("/", (req, res, next) => {
+  Person.find({})
+    .then((persons) => {
+      if (persons) {
+        res.json(persons);
+      } else {
+        res.status(404).json({ error: "People not found" });
+      }
+    })
+    .catch((err) => next(err));
 });
 
 // GET /api/persons/:id
-router.route("/:id").get((req, res) => {
-  Person.findById(req.params.id).then((person) => {
-    res.json(person);
-  });
+router.route("/:id").get((req, res, next) => {
+  Person.findById(req.params.id)
+    .then((person) => {
+      if (person) {
+        res.json(person);
+      } else {
+        res.status(404).json({ error: "Person not found" });
+      }
+    })
+    .catch((err) => next(err));
 });
 
 // POST /api/persons
-router.post("/", (req, res) => {
+router.post("/", (req, res, next) => {
   const { name, number } = req.body;
   const person = new Person({ name, number });
 
-  person.save().then((person) => {
-    res.status(201).json(person); // created
-    addOneTotal();
-  });
+  person
+    .save()
+    .then((person) => {
+      res.status(201).json(person); // created
+    })
+    .catch((err) => next(err));
 });
 
 // DELETE /api/persons/:id
-router.route("/:id").delete((req, res) => {
-  Person.findByIdAndDelete(req.params.id).then((person) => {
-    res.status(204).json({ message: "Person deleted" }); // no content
-  });
+router.route("/:id").delete((req, res, next) => {
+  Person.findByIdAndDelete(req.params.id)
+    .then((result) => {
+      res.status(204).json({ message: "Person deleted" }); // no content
+    })
+    .catch((err) => next(err));
 });
 
 /******************************************************** */

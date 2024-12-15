@@ -8,6 +8,8 @@ const expressLayouts = require("express-ejs-layouts");
 
 // IMPORT MIDDLEWARES
 const morganLogger = require("./middlewares/morganLogger");
+const unknownEndpoint = require("./middlewares/unknownEndpoint");
+const errorHandler = require("./middlewares/errorHandler");
 
 // IMPORT ROUTERS
 const homeRouter = require("./routes/home");
@@ -34,6 +36,12 @@ app.set("json spaces", 2); // set JSON spaces
 app.use("/", homeRouter); // mount the home router
 app.use("/api", apiRouter); // mount the API router
 app.use("/api/persons", personsRouter); // mount the persons router
+
+/******************************************************** */
+
+// FINAL MIDDLEWARES
+app.use(unknownEndpoint); // unknown endpoint
+app.use(errorHandler); // error handler
 
 /******************************************************** */
 
