@@ -3,14 +3,21 @@
 const express = require("express");
 const router = express.Router();
 
-const { validateGET, validatePOST } = require("../middlewares/validators");
-const { getPersons, addPerson, deletePerson } = require("../data/personsStore");
+const { validatePOST } = require("../middlewares/validators");
+const { addPerson, deletePerson } = require("../data/personsStore");
+
+const Person = require("../models/person");
 
 // MIDDLEWARES
-router.param("id", validateGET);
+// router.param("id", validateGET);
 
 // GET /persons
-router.get("/", (req, res) => res.json(getPersons()));
+router.get("/", (req, res) => {
+  Person.find({}).then((persons) => {
+    res.json(persons);
+    // console.log(persons);
+  });
+});
 
 // POST /api/persons
 router.post("/", validatePOST, (req, res) => {
@@ -20,7 +27,12 @@ router.post("/", validatePOST, (req, res) => {
 });
 
 // GET /api/persons/:id
-router.route("/:id").get((req, res) => res.json(req.person));
+router.route("/:id").get((req, res) => {
+  Person.findById(req.params.id).then((person) => {
+    res.json(person);
+    // console.log(person);
+  });
+});
 
 // DELETE /api/persons/:id
 router.route("/:id").delete((req, res) => {

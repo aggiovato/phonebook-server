@@ -1,6 +1,7 @@
 // This is the main entry point for the application.
 
 // EXTERNAL MODULES
+require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
 const expressLayouts = require("express-ejs-layouts");
@@ -15,7 +16,7 @@ const personsRouter = require("./routes/persons");
 
 // CREATE THE APP
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT;
 
 /******************************************************** */
 
