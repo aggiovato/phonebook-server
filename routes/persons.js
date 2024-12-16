@@ -54,12 +54,16 @@ router.post("/", (req, res, next) => {
 // PUT /api/persons/:id
 router.route("/:id").put((req, res, next) => {
   const { name, number } = req.body;
-  const person = {
-    name,
-    number,
-  };
 
-  Person.findByIdAndUpdate(req.params.id, person, { new: true })
+  Person.findByIdAndUpdate(
+    req.params.id,
+    { name, number },
+    {
+      new: true,
+      runValidators: true,
+      context: "query",
+    }
+  )
     .then((updatedPerson) => {
       res.status(202).json(updatedPerson); // accepted
     })
