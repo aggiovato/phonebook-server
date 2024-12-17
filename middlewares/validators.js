@@ -53,7 +53,7 @@ const validateGET = (req, res, next, id) => {
   try {
     const persons = getPersons();
     const idInt = validateId(id);
-    const person = persons.find((p) => p.id == idInt);
+    const person = persons.find((p) => p.id === idInt);
 
     if (person) {
       req.person = person;
