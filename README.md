@@ -1,6 +1,6 @@
 # Phonebook API
 
-[![Deploy to Fly.io](https://fly.io/button.svg)](https://fly.io/deploy/button/?repo=https://github.com/aggiovato/phonebook-server)
+[![Deploy to Fly.io](https://fly.io/button.svg)]()
 
 This is the backend server for the Phonebook app. It runs on port 3000, by using Express.js and some other technologies.
 
