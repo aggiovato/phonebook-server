@@ -17,22 +17,21 @@ You can find the deployed version of the app at [https://phonebook-server-aggiov
 ### GET /
 
 Get the home page. Dist is the folder where the compiled files are located.
-
 [https://phonebook-server-aggiovato.fly.dev/](https://phonebook-server-aggiovato.fly.dev/)
 
 ### GET /info
 
-Get information about the Phonebook
+Get information about the Phonebook.
 [https://phonebook-server-aggiovato.fly.dev/info](https://phonebook-server-aggiovato.fly.dev/info)
 
 ### GET /api/
 
-Get the API homepage
+Get the API homepage.
 [https://phonebook-server-aggiovato.fly.dev/api/](https://phonebook-server-aggiovato.fly.dev/api/)
 
 ### GET /api/persons
 
-Get all persons
+Get all persons.
 [https://phonebook-server-aggiovato.fly.dev/api/persons](https://phonebook-server-aggiovato.fly.dev/api/persons)
 
 ## Requests
