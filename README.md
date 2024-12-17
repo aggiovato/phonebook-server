@@ -7,10 +7,10 @@ You can find the deployed version of the app at [https://phonebook-server-aggiov
 ## Endpoints
 
 <div style="display: flex; justify-content: space-between;">
-  <img src="./src/assets/phonebook-home-preview.jpg" alt="Phonebook_Home_Preview" width="200" height="500" />
-  <img src="./src/assets/phonebook-info-preview.jpg" alt="Phonebook_Info_Preview" width="200" height="500" />
-  <img src="./src/assets/phonebook-api-preview.jpg" alt="Phonebook_API_Preview" width="200" height="500" />
-  <img src="./src/assets/phonebook-api-persons-preview.jpg" alt="Phonebook_API_Persons_Preview" width="200" height="500" />
+  <img src="./src/assets/phonebook-home-preview.jpg" alt="Phonebook_Home_Preview" width="200" height="380" />
+  <img src="./src/assets/phonebook-info-preview.jpg" alt="Phonebook_Info_Preview" width="200" height="380" />
+  <img src="./src/assets/phonebook-api-preview.jpg" alt="Phonebook_API_Preview" width="200" height="380" />
+  <img src="./src/assets/phonebook-api-persons-preview.jpg" alt="Phonebook_API_Persons_Preview" width="200" height="380" />
 </div>
 
 
