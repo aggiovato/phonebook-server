@@ -1,5 +1,7 @@
 # Phonebook API
 
+[![Deploy to Fly.io](https://fly.io/deploy/button/?repo=https://github.com/Aggiovato/phonebook-server)](https://fly.io/deploy/button/?repo=https://github.com/Aggiovato/phonebook-server)
+
 This is the backend server for the Phonebook app. It runs on port 3000, by using Express.js and some other technologies.
 
 You can find the deployed version of the app at [https://phonebook-server-aggiovato.fly.dev/](https://phonebook-server-aggiovato.fly.dev/)
@@ -8,27 +10,32 @@ You can find the deployed version of the app at [https://phonebook-server-aggiov
 
 ### GET /
 
-Get the home page
+Get the home page. Dist is the folder where the compiled files are located.
 
-### GET /api/persons
+[https://phonebook-server-aggiovato.fly.dev/](https://phonebook-server-aggiovato.fly.dev/)
 
-Get all persons
+![Phonebook_Home_Preview](./src/assets/phonebook-home-preview.jpg)
 
 ### GET /info
 
 Get information about the Phonebook
+[https://phonebook-server-aggiovato.fly.dev/info](https://phonebook-server-aggiovato.fly.dev/info)
 
-### GET /api/persons/:id
+![Phonebook_Info_Preview](./src/assets/phonebook-info-preview.jpg)
 
-Get a person by ID
+### GET /api/
 
-### DELETE /api/persons/:id
+Get the API homepage
+[https://phonebook-server-aggiovato.fly.dev/api/](https://phonebook-server-aggiovato.fly.dev/api/)
 
-Delete a person by ID
+![Phonebook_API_Preview](./src/assets/phonebook-api-preview.jpg)
 
-### POST /api/persons
+### GET /api/persons
 
-Create a new person
+Get all persons
+[https://phonebook-server-aggiovato.fly.dev/api/persons](https://phonebook-server-aggiovato.fly.dev/api/persons)
+
+![Phonebook_API_Persons_Preview](./src/assets/phonebook-api-persons-preview.jpg)
 
 ## Requests
 
